@@ -1,9 +1,10 @@
 import { defineConfig } from "vite"
+const postcssPresetEnv = require('postcss-preset-env')
 /*
  * @Author: lrm
  * @Date: 2022-11-03 13:34:58
  * @LastEditors: lrm
- * @LastEditTime: 2022-11-03 21:54:02
+ * @LastEditTime: 2022-11-03 23:59:44
  * @FilePath: \vite\vite-test\vite.example.config.js
  */
 
@@ -38,7 +39,10 @@ export default defineConfig({
         }
       },
       sass: {},
-      devSourcemap: false
+      devSourcemap: false,
+      postcss: {
+        plugins: [postcssPresetEnv()]
+      }
     }
   }
 }) 

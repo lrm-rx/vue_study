@@ -1,9 +1,15 @@
 // @import url(./var.less); // 在全局定义之后不再引用
 
 .content {
+  width: 400px;
   .main {
     background-color: @mainColor;
     padding: (100px / 2);
     margin: 100px / 2;
+    // 响应式布局, 左侧一个菜单栏 宽度自适应根据屏幕30%
+    // 400px           200px                        800px---> 父容器
+    // 120px    200 * 0.3 -> 60px(取100px)    800 * 0.3 -> 240px(取200px)
+    width: clamp(100px, 30%, 200px);
+    user-select: none;
   }
 }

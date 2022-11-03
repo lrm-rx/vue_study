@@ -3,7 +3,7 @@
  * @Author: lrm
  * @Date: 2022-11-03 00:48:17
  * @LastEditors: lrm
- * @LastEditTime: 2022-11-03 15:20:38
+ * @LastEditTime: 2022-11-03 23:37:11
  * @FilePath: \vite\vite-test\vite.config.js
  */
 import { defineConfig,loadEnv } from "vite"
@@ -38,7 +38,7 @@ export default defineConfig(({command, mode}) => {
   // console.log('process.cwd()', process.cwd())
   // 当前env文件所在的目录,第二个参数不是必须要使用process.cwd() 第三个参数prefixes不一定要传
   const env = loadEnv(mode, process.cwd(), "")
-  console.log('env....', env);
+  // console.log('env....', env);
   return envResovler[command]()
   // 以下代码使用 策略模式 实现
   // if(command === "build") {

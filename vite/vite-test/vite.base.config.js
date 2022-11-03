@@ -1,12 +1,12 @@
-import { defineConfig } from "vite"
 /*
  * @Author: lrm
  * @Date: 2022-11-03 13:34:58
  * @LastEditors: lrm
- * @LastEditTime: 2022-11-03 21:53:32
+ * @LastEditTime: 2022-11-04 00:05:28
  * @FilePath: \vite\vite-test\vite.base.config.js
  */
-
+import { defineConfig } from "vite"
+const postcssPresetEnv = require('postcss-preset-env')
 export default defineConfig({
   optimizeDeps: {
     exclude: [], // 将指定数组中的依赖不进行依赖预构建
@@ -39,6 +39,12 @@ export default defineConfig({
       },
       sass: {},
       devSourcemap: true, // 开启文件索引
+      // postcss: {
+      //   plugins: [postcssPresetEnv()] // 在这里设置不生效?
+      // }
+    },
+    postcssOptions: {
+      
     }
   }
 }) 
