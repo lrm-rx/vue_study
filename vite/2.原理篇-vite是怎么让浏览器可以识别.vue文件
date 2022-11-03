@@ -1,0 +1,16 @@
+# [原理篇] vite是怎么让浏览器可以识别.vue文件的
+
+```
+yarn add vite
+```
+
+yarn create 实际上就等于在安装`create-vite`脚手架,然后使用脚手架的指令去构建项目
+
+```
+yarn create vite my-vue-app --template vue
+```
+
+实现简单的vite的开发服务器`vite-dev-server`
+
+koa: node端的一个框架
+
