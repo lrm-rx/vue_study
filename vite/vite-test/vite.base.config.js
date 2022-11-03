@@ -3,7 +3,7 @@ import { defineConfig } from "vite"
  * @Author: lrm
  * @Date: 2022-11-03 13:34:58
  * @LastEditors: lrm
- * @LastEditTime: 2022-11-03 20:28:12
+ * @LastEditTime: 2022-11-03 21:53:32
  * @FilePath: \vite\vite-test\vite.base.config.js
  */
 
@@ -28,6 +28,17 @@ export default defineConfig({
       // }
       hashPrefix: "hello",
       globalModulePaths: [], // 不参与到css模块化的路径
+    },
+    preprocessorOptions: { // key:value
+      // 在webpack中可以到less-loader中配置
+      less: { // 整个的配置对象都会最终给到less的执行参数(全局参数)中去
+        math: "always", 
+        globalVars: { // 全局变量
+          mainColor: "red",
+        }
+      },
+      sass: {},
+      devSourcemap: true, // 开启文件索引
     }
   }
 }) 
