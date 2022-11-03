@@ -3,8 +3,8 @@ import { defineConfig } from "vite"
  * @Author: lrm
  * @Date: 2022-11-03 13:34:58
  * @LastEditors: lrm
- * @LastEditTime: 2022-11-03 15:40:57
- * @FilePath: \vite\vite-test\vite.base.config.js
+ * @LastEditTime: 2022-11-03 15:40:31
+ * @FilePath: \vite\vite-test\vite.example.config.js
  */
 
 export default defineConfig({
