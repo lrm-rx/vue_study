@@ -15,11 +15,11 @@ import viteProdConfig from "./vite.prod.config"
 // 策略模式 写成函数是为了方便调试
 const envResovler = {
   "build": () => {
-    console.log('生产环境');
+    // console.log('生产环境');
     return ({...viteBaseConfig, ...viteProdConfig})
   },
   "serve": () => {
-    console.log('开发环境');
+    // console.log('开发环境');
     return Object.assign({}, viteBaseConfig,viteDevConfig) // 新配置里是可能会被配置envDir
   }
 }

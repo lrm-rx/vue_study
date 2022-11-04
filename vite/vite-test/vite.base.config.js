@@ -1,6 +1,15 @@
 
 import { defineConfig } from "vite"
-import {ViteAliases} from "vite-aliases"
+// import {ViteAliases} from "vite-aliases" // 包有问题
+import myViteAliases from "./plugins/ViteAliases"
+// import {createHtmlPlugin} from "vite-plugin-html"
+
+import CreateHtmlPlugin from "./plugins/CreateHtmlPlugin"
+
+import { viteMockServe } from "vite-plugin-mock"
+
+import VitePluginMock from "./plugins/VitePluginMock"
+
 const postcssPresetEnv = require('postcss-preset-env')
 export default defineConfig({
 
@@ -59,6 +68,29 @@ export default defineConfig({
     emptyOutDir: true, // 清除输出目录中的所有文件
   },
   plugins: [
-    ViteAliases()
+    myViteAliases(),
+    // ViteAliases()
+    // createHtmlPlugin({
+    //   inject: {
+    //     data: {
+    //       title: "首页"
+    //     }
+    //   }
+    // }),
+    CreateHtmlPlugin({
+      inject: {
+        data: {
+          title: "首页"
+        }
+      }
+    }),
+    // mock数据 -- serve --> 开启开发服务器
+    // viteMockServe({
+    //   // default
+    //   mockPath: 'mock',
+    //   localEnabled: command === 'serve', 
+    // })
+    // 使用自己封装的
+    VitePluginMock()
   ]
 }) 
