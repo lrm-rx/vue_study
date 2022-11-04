@@ -1,10 +1,3 @@
-/*
- * @Author: lrm
- * @Date: 2022-11-02 15:15:24
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-02 16:34:32
- * @FilePath: \pinia-study\src\store\products.ts
- */
 import { defineStore } from 'pinia'
 import { getProducts, IProduct } from '../api/shop'
 

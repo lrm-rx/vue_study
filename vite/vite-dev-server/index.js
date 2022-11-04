@@ -1,18 +1,17 @@
-/*
- * @Author: lrm
- * @Date: 2022-11-03 16:00:15
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-03 17:49:53
- * @FilePath: \vite\vite-dev-server\index.js
- */
+
 const Koa = require("koa");
 const fs = require("fs");
 const path = require("path");
+const alisaResolver = require("./aliasResolver")
 
 const app = new Koa(); 
 
+// 读取vite.config.js
+const viteConfig = require("./vite.config")
+// console.log("vite.Config", viteConfig)
+
 app.use(async(ctx)=> {
-  console.log('ctx',ctx.request, ctx.response)
+  // console.log('ctx',ctx.request, ctx.response)
   if(ctx.request.url === "/") {
     const indexContent = await fs.promises.readFile(path.resolve(__dirname, "./index.html"))
     ctx.response.body = indexContent;
@@ -20,16 +19,13 @@ app.use(async(ctx)=> {
     // json --> application/json text/html  text/javascript
     ctx.response.set("Content-Type", "text/html")
   }
-  if(ctx.request.url === "/main.js") {
-    const mainJSContent = await fs.promises.readFile(path.resolve(__dirname, "./main.js"))
-    ctx.response.body = mainJSContent;
-    // 响应体填充好后,以什么形式返回给前端?
-    // json --> application/json text/html  text/javascript
-    ctx.response.set("Content-Type", "text/javascript")
-  }
-  if(ctx.request.url === "/APP.vue") {
-    const appVueContent = await fs.promises.readFile(path.resolve(__dirname, "./App.vue"))
-    ctx.response.body = appVueContent;
+  // 如果当前文件的url是以js后缀结尾的
+  if(ctx.request.url.endsWith(".js")) {
+    const JSContent = await fs.promises.readFile(path.resolve(__dirname, "." + ctx.request.url))
+    // console.log('JSContent', JSContent)
+    // 直接进行alias的替换
+    const lastResult = alisaResolver(viteConfig.resolve.alias, JSContent.toString())
+    ctx.response.body = lastResult;
     // 响应体填充好后,以什么形式返回给前端?
     // json --> application/json text/html  text/javascript
     ctx.response.set("Content-Type", "text/javascript")

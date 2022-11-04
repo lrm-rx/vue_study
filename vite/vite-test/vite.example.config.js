@@ -1,14 +1,14 @@
 import { defineConfig } from "vite"
+import { path } from 'path';
 const postcssPresetEnv = require('postcss-preset-env')
-/*
- * @Author: lrm
- * @Date: 2022-11-03 13:34:58
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-03 23:59:44
- * @FilePath: \vite\vite-test\vite.example.config.js
- */
 
 export default defineConfig({
+  resolve: {
+    alias: { // 配置别名
+      "@": path.resolve(__dirname, "./src"),
+      "@assets": path.resolve(__dirname, "./src/assets")
+    }
+  },
   optimizeDeps: {
     exclude: [], // 将指定数组中的依赖不进行依赖预构建
   },
@@ -44,5 +44,19 @@ export default defineConfig({
         plugins: [postcssPresetEnv()]
       }
     }
+  },
+  // 构建生产包策略
+  build: {
+    // 配置rollup的一些构建策略
+    rollupOptions: {
+      // 控制输出
+      output: {
+        // 在rollup里面, hash代表将你的文件名和文件内容进行组合计算得来的结果
+        assetFileNames: "[hash].[name].[ext]"
+      }
+    },
+    assetsInlineLimit: 4096000, // 4000kb, 图片格式通过大小来控制 (base64)
+    outDir: "dist", // 修改打包生产的文件夹
+    assetsDir: "static", // 修改静态资源保存位置
   }
 }) 

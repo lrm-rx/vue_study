@@ -1,10 +1,4 @@
-/*
- * @Author: lrm
- * @Date: 2022-11-03 14:33:01
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-03 14:50:13
- * @FilePath: \vite\vite-test\request.js
- */
+
 
 // axios.baseUrl = "http:test/api"
 // import axios from "axios"

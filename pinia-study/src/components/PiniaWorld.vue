@@ -1,10 +1,3 @@
-<!--
- * @Author: lrm
- * @Date: 2022-11-01 22:04:17
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-02 18:09:21
- * @FilePath: \vue-study\pinia-study\src\components\PiniaWorld.vue
--->
 <template>
   <p>countMore: {{mainStroe.countMore}}</p>
   <p>countMore: {{mainStroe.countMore}}</p>

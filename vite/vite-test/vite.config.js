@@ -1,11 +1,4 @@
 
-/*
- * @Author: lrm
- * @Date: 2022-11-03 00:48:17
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-03 23:37:11
- * @FilePath: \vite\vite-test\vite.config.js
- */
 import { defineConfig,loadEnv } from "vite"
 import viteBaseConfig from "./vite.base.config"
 import viteDevConfig from "./vite.dev.config"

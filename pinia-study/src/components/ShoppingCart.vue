@@ -1,10 +1,3 @@
-<!--
- * @Author: lrm
- * @Date: 2022-11-02 14:57:33
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-02 17:10:05
- * @FilePath: \pinia-study\src\components\ShoppingCart.vue
--->
 <template>
   <h2>你的购物车</h2>
   <p>

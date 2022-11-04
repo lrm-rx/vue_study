@@ -1,10 +1,3 @@
-/*
- * @Author: lrm
- * @Date: 2022-11-01 22:04:17
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-02 15:04:12
- * @FilePath: \pinia-study\src\main.ts
- */
 import { createApp } from 'vue'
 // import './style.css'
 import App from './App.vue'

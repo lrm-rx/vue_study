@@ -1,10 +1,3 @@
-/*
- * @Author: lrm
- * @Date: 2022-11-02 15:04:55
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-02 15:12:33
- * @FilePath: \pinia-study\src\api\shop.ts
- */
 export interface IProduct {
   id: number
   title: string

@@ -1,11 +1,3 @@
-<!--
- * @Author: lrm
- * @Date: 2022-11-01 22:04:17
- * @LastEditors: lrm
- * @LastEditTime: 2022-11-02 17:52:37
- * @FilePath: \vue-study\pinia-study\src\App.vue
--->
-
 <template>
   <PiniaWorld/>
   <h1>Pinia - 购物车示例</h1>
