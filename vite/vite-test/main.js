@@ -11,6 +11,9 @@
 
 // import "./src/imageLoader"
 import "./src/svgLoader"
+import("./src/imageLoader", []).then(data=>{
+  console.log('data:', data)
+})
 import jsonFile from "./src/assets/json/index.json"
 import {name, age} from "./src/assets/json/index.json"
 

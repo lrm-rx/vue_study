@@ -1,0 +1,37 @@
+// 去配置一些ts的检查手段和检查规则
+
+{
+  "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "strict": true,
+      "jsx": "preserve",
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "baseUrl": ".",
+      "paths": {
+          "@/*": [
+              "src/*"
+          ]
+      },
+      "lib": [
+          "esnext",
+          "dom"
+      ],
+      "skipLibCheck": true // 是否跳过node_modules目录的检查
+  },
+  "include": [
+      "src/**/*.ts",
+      "src/**/*.d.ts",
+      "src/**/*.tsx",
+      "src/**/*.vue"
+  ],
+  "exclude": [
+      "node_modules"
+  ]
+}
+
+
+

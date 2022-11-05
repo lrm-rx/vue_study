@@ -3,7 +3,7 @@ import { defineConfig } from "vite"
 // import {ViteAliases} from "vite-aliases" // 包有问题
 import myViteAliases from "./plugins/ViteAliases"
 // import {createHtmlPlugin} from "vite-plugin-html"
-
+import viteCompression from "vite-plugin-compression"
 import CreateHtmlPlugin from "./plugins/CreateHtmlPlugin"
 
 import { viteMockServe } from "vite-plugin-mock"
@@ -91,6 +91,7 @@ export default defineConfig({
     //   localEnabled: command === 'serve', 
     // })
     // 使用自己封装的
-    VitePluginMock()
+    VitePluginMock(),
+    viteCompression()
   ]
 }) 

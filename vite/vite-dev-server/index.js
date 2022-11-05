@@ -7,13 +7,29 @@ const alisaResolver = require("./aliasResolver")
 const app = new Koa(); 
 
 // 读取vite.config.js
-const viteConfig = require("./vite.config")
+const viteConfig = require("./vite.config") // 读到配置文件
 // console.log("vite.Config", viteConfig)
+
+// process process.cwd()  process.env
+viteConfig.plugins.forEach(plugin => plugin.config && plugin.config(viteConfig));
+
+const mergeOptions = Object.assign({}, defautlConfig, viteconfig, terminalConf)
+
+viteConfig.plugins.forEach(plugin => plugin.config && plugin.configResolved(mergeOptions));
+
+// transformIndexHtml
+
 
 app.use(async(ctx)=> {
   // console.log('ctx',ctx.request, ctx.response)
   if(ctx.request.url === "/") {
     const indexContent = await fs.promises.readFile(path.resolve(__dirname, "./index.html"))
+    let cacheIndexHtml = indexContent
+    viteConfig.plugins.forEach(plugin => {
+      if(plugin.transformIndexHtml) {
+        cacheIndexHtml = plugin.transformIndexHtml(cacheIndexHtml)
+      }
+    });
     ctx.response.body = indexContent;
     // 响应体填充好后,以什么形式返回给前端?
     // json --> application/json text/html  text/javascript

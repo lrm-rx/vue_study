@@ -19,6 +19,7 @@
   "devDependencies": {
     "postcss-preset-env": "^7.8.2",
     "vite": "^3.2.2",
-    "vite-aliases": "^0.9.7"
+    "vite-aliases": "^0.9.7",
+    "vite-plugin-compression": "^0.5.1"
   }
 }
