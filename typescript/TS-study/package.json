@@ -1,0 +1,20 @@
+{
+  "name": "TS-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "service": "parcel ./index.html",
+    "dev:build": "tsc -w",
+    "dev:start": "nodemon --watch dist/teaching js --exec node ./dist/teaching/lClassDecorator.js",
+    "start:dev": "nodemon --watch src/ -e ts --exec ts-node ./src/index.ts",
+    "tsc": "tsc src/teaching/lClassDecorator.ts --target ES5 -w --experimentalDecorators"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.9.3"
+  }
+}

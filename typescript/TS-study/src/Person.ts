@@ -5,6 +5,8 @@ class Person {
   public age: number = 18
   public phone: string = '11111111111'
 
+  // public resolve: ()=>void = () => {} // 函数类型的属性
+
   // 对象变量 = 实例变量 = 类的非静态的属性
   constructor(name: string, age: number, phone: string){
     this.name = name
@@ -25,7 +27,7 @@ class Person {
 
 // let xiaoming = new Person();
 // // 给对象赋值的两种方法
-// // 方法1: 通过类中属性或方法来赋值
+// // 方法1: 通过类中属性或方法来赋值 get/set选择器
 // xiaoming.name = '小明'
 // xiaoming.age = 18
 // xiaoming.phone = '12345678910'
@@ -36,8 +38,10 @@ class Person {
 /**
  * 创建对象一共做了三件事情
  * 1. 在堆中为类的某个对象[实例]分配一个空间
- * 2. 调用对应的构造函数[构造器]
+ * 2. 调用对应的构造函数[构造器], 并且把构造器中的各个参数赋值给对象属性
  *      new Person()自动匹配无参数的构造器
- * 3. 
+ * 3. 把对象赋值给对象变量[把实例赋值给实例变量]
  */
  let xiaoming = new Person('小明', 18, '12345678910');
+ xiaoming.doSports('小红', '学校操场')
+ console.log(xiaoming);
