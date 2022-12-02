@@ -6,23 +6,22 @@
 // import getMessage from './wx-news/methodOverLoad';
 // getMessage
 
-import './arraylist/ArrayList'
+// import './arraylist/ArrayList'
 
 // const a: number = 1;
 
-// import MyLocalstorage from './singleCase/localStorage';
-
+import MyLocalstorage from './singletonmode/localStorage';
 // const store = new MyLocalstorage();
 
 // console.log(store);
 // console.dir(MyLocalstorage);
 
-// const store1 = MyLocalstorage.getInstance('store1');
-// const store2 = MyLocalstorage.getInstance('store2');
-// console.log(store1);
-// console.log(store2);
-// console.log(store1 === store2);
-// console.dir(MyLocalstorage);
+const store1 = MyLocalstorage.getInstance('store1');
+const store2 = MyLocalstorage.getInstance('store2');
+console.log(store1);
+console.log(store2);
+console.log(store1 === store2);
+console.dir(MyLocalstorage);
 
 // import allvechile from './allvechile/allvechile';
 
