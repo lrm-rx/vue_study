@@ -5,4 +5,8 @@
 // import './example/generics' // 泛型
 // import './example/es6-class-1.js'
 // import './example/es6-class-2.js'
-import './example/class'
+// import './example/class' // 类
+// import './example/enum' // 枚举
+// import './example/inference-compatibility' // 类型推论
+// import './example/advanced-type-1' // 高级类型
+import './example/advanced-type-2' // 高级类型
