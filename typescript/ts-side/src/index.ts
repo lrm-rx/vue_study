@@ -9,4 +9,7 @@
 // import './example/enum' // 枚举
 // import './example/inference-compatibility' // 类型推论
 // import './example/advanced-type-1' // 高级类型
-import './example/advanced-type-2' // 高级类型
+// import './example/advanced-type-2' // 高级类型
+// import './modules/index.js' // js模块
+// import './ts-modules/index' // ts模块
+import './example/merging'
