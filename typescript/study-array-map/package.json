@@ -1,0 +1,15 @@
+{
+  "name": "study-array-map",
+  "version": "1.0.0",
+  "description": "array map function user TS",
+  "main": "./dist/study-array-map.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ming",
+    "ts"
+  ],
+  "author": "mnig",
+  "license": "MIT"
+}

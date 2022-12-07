@@ -12,4 +12,7 @@
 // import './example/advanced-type-2' // 高级类型
 // import './modules/index.js' // js模块
 // import './ts-modules/index' // ts模块
-import './example/merging'
+// import './example/merging' // 声明合并
+// import './example/decorators.ts' // 装饰器
+// import './example/mixin' // 混入
+import './example/update'
