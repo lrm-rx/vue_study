@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/*
+1. 局部变量
+2. 全局变量
+*/
+.container {
+  color: skyblue;
+}
+
+/*
+  变量值类型
+  变量值的类型可以有很多种
+  SASS支持6种主要的数据类型
+  1. 数字 1,2,14,10px
+  2. 字符串, 有引号字符串与无引号字符串, "foo", 'bar', baz
+  3. 颜色, blue, #04a3f9, rgba(255,0,0,0.5)
+  4. 布尔值 true,false
+  5. 空值, null
+  6. 数组(list), 用空格或逗号作为分隔符,1.5em 1em 0 2em, Helvetica,Arial,sans-serif
+  7. maps, 相当于JavaScript的object, (key1:value1,key2:value2)
+*/
+.container-inner {
+  font-size: 18px;
+  background-color: #000;
+  content: null;
+  content: 1;
+  color: #fbe200;
+}
+
+.footer {
+  font-size: 18px;
+}
+
+.wrap {
+  font: 18px bold;
+}
+
+.container-color {
+  border-color: #333;
+}

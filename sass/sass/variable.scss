@@ -1,0 +1,73 @@
+/*
+1. 局部变量
+2. 全局变量
+*/
+
+// 全局变量(1)
+$baseColor: skyblue;
+// 以下是命名视为相同, 后者覆盖前者, 变量先定义后使用
+$border-color: #ffff22;
+$border_color: #fff;
+$font-size: null;
+
+.container {
+  // 全局变量(2)
+  $font-size: 16x !global;
+  // 局部变量
+  $border-radius: 1px;
+  color: $baseColor
+}
+
+/*
+  变量值类型
+  变量值的类型可以有很多种
+  SASS支持6种主要的数据类型
+  1. 数字 1,2,14,10px
+  2. 字符串, 有引号字符串与无引号字符串, "foo", 'bar', baz
+  3. 颜色, blue, #04a3f9, rgba(255,0,0,0.5)
+  4. 布尔值 true,false
+  5. 空值, null
+  6. 数组(list), 用空格或逗号作为分隔符,1.5em 1em 0 2em, Helvetica,Arial,sans-serif
+  7. maps, 相当于JavaScript的object, (key1:value1,key2:value2)
+*/
+
+$layer-index: 10;
+$border-width: 4px;
+$font-basic-family: 'Open Sans', Helvetica, Sans-Serif;
+$top-bg-color: rgba(255,150,39,0.6);
+$block-basic-padding: 6px 10px 8px 10px;
+$blank-mode: true;
+$var: null; // 值null是其类型的唯一值.它表示缺少值,通常由函数返回以指示缺少结果.
+$fonts: (serif: "Helvetica Neue", monospace: "Consolas");
+$color-map: (color1: #fa0000, color2: #fbe200, color3: #95d7eb);
+
+.container-inner {
+  $font-size: 18px !global;
+  font-size: $font-size;
+  @if $blank-mode {
+    background-color: #000;
+  }
+  @else {
+    background-color: #fff;
+  }
+  content: type-of($var);
+  content: length($var);
+  color: map-get($color-map, color2);
+}
+
+.footer {
+  font-size: $font-size;
+}
+
+// 如果列表中包含空值,则生成的css中将忽略该空值
+.wrap {
+  font: 18px bold map-get($fonts, 'sans');
+}
+
+$color: #333;
+// 如果$color之前没有定义就使用如下默认值
+$color: #666 !default;
+.container-color {
+  border-color: $color;
+}
+
