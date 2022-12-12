@@ -33,7 +33,7 @@ class Observer {
         val = newValue;
         that.walk(newValue);
         // 发送通知
-        dep.notity();
+        dep.notify();
       }
     })
   }
