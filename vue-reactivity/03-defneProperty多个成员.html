@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>defineProperty 多个成员</title>
+</head>
+<body>
+  <div id="app">hello</div>
+</body>
+</html>
+<script>
+  // 模拟 Vue 中的 data 选项
+  let data = {
+    msg: 'hello',
+    count: 100
+  };
+
+  // 模拟 Vue的实例
+  let vm = {};
+
+  function proxyData(data) {
+    // 遍历 data 对象的所有属性
+    Object.keys(data).forEach(key => {
+      // 把 data 中的属性, 转换成 vm 的 setter/getter
+      Object.defineProperty(vm, key, {
+        enumerable: true,
+        configurable: true,
+        get() {
+          console.log('get:', key, data[key]);
+          return data[key];
+        },
+        set(newValue) {
+          console.log('set:', key, newValue);
+          if(newValue === data[key]) {
+            return;
+          }
+          data[key] = newValue;
+          // 更新dom
+          document.querySelector('#app').textContent = data[key];
+        }
+      })
+    })
+  }
+
+  proxyData(data);
+
+  vm.msg = 'Hello Vue';
+  console.log(vm.msg);
+</script>

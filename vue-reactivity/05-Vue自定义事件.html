@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue自定义事件</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script src="./js/vue.js"></script>
+<script>
+  // Vue自定义事件
+  let vm = new Vue();
+  // 注册事件(订阅消息)
+  vm.$on('Change', () => {
+    console.log('change');
+  })
+  vm.$on('Change', () => {
+    console.log('change two');
+  })
+
+  // 触发事件(发布消息)
+  vm.$emit('Change')
+</script>
