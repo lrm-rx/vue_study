@@ -1,0 +1,12 @@
+@use 'uses/common';
+@use 'css/about';
+@use 'uses/global' as g1;
+@use 'uses/global' as g2;
+
+body {
+  font-size: common.$font-size;
+  width: common.column-width(2, 23);
+  @include common.bgColor(#f00);
+  @include g1.base(#fff);
+  @include g2.base(#000);
+}

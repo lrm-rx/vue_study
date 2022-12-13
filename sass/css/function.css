@@ -1,0 +1,55 @@
+@charset "UTF-8";
+p {
+  height: 30px;
+}
+
+.p0 {
+  background-color: #5c7a29;
+}
+
+.p1 {
+  /*
+    让颜色变亮
+    lighten($color, $amount)
+    $amount 的取值有 0% - 100%之间
+  */
+  background-color: #aace6e;
+}
+
+.p2 {
+  background-color: #222e0f;
+}
+
+.p3 {
+  background-color: rgba(92, 122, 41, 0.6);
+}
+
+p {
+  z-index: 15;
+  z-index: 6;
+  z-index: 10;
+  opacity: 0.3410982515;
+}
+
+.p10 {
+  z-index: 1;
+  z-index: 3;
+  z-index: 3;
+  padding: 10px 20px 30px;
+  color: skyblue;
+}
+
+.p12 {
+  font-size: 18px;
+  padding-right: 20px;
+}
+.p12:after {
+  content: '"small", "normal", "large" 10px, 20px, 10px, 30px';
+}
+
+.header {
+  background-color: #000;
+  content: selector-append(".a", ".b", ".c");
+  content: selector-unify("a", ".disabled") + '';
+}
+

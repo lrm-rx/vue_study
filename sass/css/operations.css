@@ -1,0 +1,39 @@
+@charset "UTF-8";
+.container {
+  background-color: red;
+}
+
+div {
+  font-size: 16px;
+  border-color: red;
+}
+
+/*
+  数字类型包括: 纯数字,百分号,css部分单位(px, pt, in...)
+
+  % 与 单位不能一起运算
+  纯数字与百分号或单位运算时会自动转化成相应的百分号与单位值
+*/
+.test {
+  width: 70;
+  width: 70%;
+  width: 70%;
+  width: 30px;
+  width: 30px;
+  width: 23.3333333333px;
+  width: 30;
+  width: 30%;
+  width: 30%;
+  width: 10px;
+  width: -10px;
+  width: -3.3333333333px;
+  width: 200;
+  width: 50%;
+  width: 20px;
+  width: 10/2;
+  width: 2;
+  width: 10px;
+  width: 25;
+  width: 8px;
+  width: 0;
+}

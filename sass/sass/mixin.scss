@@ -1,0 +1,65 @@
+// 定义页面一个区块基本的样式
+@mixin block {
+  width: 100%;
+  margin-left: 2%;
+  border-radius: 8px;
+  border: 1px solid #f3f3f3;
+}
+.container {
+  @include block;
+}
+
+// 定义警告字体样式,下划线(_)与横线(-)是一样的
+@mixin waring-text {
+  .warn-text {
+    font-size: 14px;
+    color: rgb(255, 253, 123);
+    line-height: 180%;
+  }
+}
+.warn-box {
+  @include waring-text;
+}
+
+// 定义flex布局元素纵轴的排列方式
+@mixin flex-align($aitem) {
+  -webkit-box-align: $aitem;
+  -webkit-align-items: $aitem;
+  -ms-flex-align: $aitem;
+  align-items: $aitem;
+}
+
+.flex-box {
+  // @include flex-align(center)
+  @include flex-align($aitem: center)
+}
+
+// 定义块元素内边距
+@mixin block-padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+.box-padding {
+  // @include block-padding(10px, 20px, 30px, 40px);
+  // @include block-padding(10px, 20px, 0, 0);
+  // @include block-padding($left: 10px, $right: 10px, $top: 0, $bottom: 0);
+  @include block-padding($left: 10px, $right: 10px);
+}
+
+/*
+  定义线性渐变
+  $direction: 方向
+  $gradients: 颜色过度的值列表
+*/
+
+@mixin linear-gradient($direction, $gradients...) {
+  background-color: nth($gradients, 1);
+  background-image: linear-gradient($direction, $gradients);
+}
+
+.bg-color {
+  @include linear-gradient(to right, #f00, orange, yellow);
+}

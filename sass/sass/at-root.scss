@@ -1,0 +1,23 @@
+.foo {
+  .bar {
+    font-size: 12px;
+  }
+}
+
+.foo {
+  @at-root & {
+    font-size: 12px;
+  }
+}
+
+.foo {
+  @at-root & .bar {
+    font-size: 14px;
+  }
+}
+
+.foo {
+  @at-root .bar & {
+    font-size: 14px;
+  }
+}

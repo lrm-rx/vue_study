@@ -1,0 +1,68 @@
+// 运算符 == != < > <= >= and or not
+$theme: 2;
+.container {
+  @if $theme != 1 {
+    background-color: red;
+  }
+  @else {
+    background-color: skyblue;
+  }
+}
+
+$width: 100;
+$height: 200;
+$last: false;
+$index: 20;
+div {
+  @if $width > 50 and $height < 300 {
+    font-size: 16px;
+  }
+  @else {
+    font-size: 14px;
+  }
+
+  @if not ($index > 20) {
+    border-color: red;
+  }
+  @else {
+    border-color: skyblue;
+  }
+}
+
+/*
+  数字类型包括: 纯数字,百分号,css部分单位(px, pt, in...)
+  
+  % 与 单位不能一起运算
+  纯数字与百分号或单位运算时会自动转化成相应的百分号与单位值
+*/
+
+.test {
+  //  + 
+  width: 50 + 20;
+  width: 50 + 20%;
+  width: 50% + 20%;
+  width: 20 + 10px;
+  width: 10px + 20px;
+  width: 10px + 10pt;
+  // -
+  width: 50 - 20;
+  width: 50 - 20%;
+  width: 50% - 20%;
+  width: 20 - 10px;
+  width: 10px - 20px;
+  width: 10px - 10pt;
+  // *
+  width: 10 * 20;
+  width: 5 * 10%;
+  width: 10px * 2;
+  // /
+  $width: 100px;
+  width: 10 / 2;
+  width: (10/5);
+  width: $width / 10;
+  width: round($number: 50) / 2;
+  width: 10px / 2px + 3px;
+
+  // %
+  width: 10 % 2;
+}

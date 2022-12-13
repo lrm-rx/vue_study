@@ -1,0 +1,37 @@
+@charset "UTF-8";
+.container {
+  width: 100%;
+  margin-left: 2%;
+  border-radius: 8px;
+  border: 1px solid #f3f3f3;
+}
+
+.warn-box .warn-text {
+  font-size: 14px;
+  color: rgb(255, 253, 123);
+  line-height: 180%;
+}
+
+.flex-box {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.box-padding {
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+}
+
+/*
+  定义线性渐变
+  $direction: 方向
+  $gradients: 颜色过度的值列表
+*/
+.bg-color {
+  background-color: #f00;
+  background-image: -webkit-gradient(linear, left top, right top, from(#f00), color-stop(orange), to(yellow));
+  background-image: linear-gradient(to right, #f00, orange, yellow);
+}

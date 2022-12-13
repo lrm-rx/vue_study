@@ -1,0 +1,125 @@
+.p1 {
+  width: 10px;
+  height: 30px;
+  background-color: pink;
+}
+
+.p2 {
+  width: 20px;
+  height: 30px;
+  background-color: pink;
+}
+
+.p3 {
+  width: 30px;
+  height: 30px;
+  background-color: pink;
+}
+
+.through-p1 {
+  width: 10px;
+  height: 30px;
+  background-color: pink;
+}
+
+.through-p2 {
+  width: 20px;
+  height: 30px;
+  background-color: pink;
+}
+
+.through-p3 {
+  width: 30px;
+  height: 30px;
+  background-color: pink;
+}
+
+.through-p4 {
+  width: 40px;
+  height: 30px;
+  background-color: pink;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    opacity: 0.3;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    background: pink;
+  }
+  100% {
+    opacity: 0.3;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.3;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    background: pink;
+  }
+  100% {
+    opacity: 0.3;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+#loading {
+  position: fixed;
+  top: 200px;
+  left: 46%;
+}
+
+#loading span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: skyblue;
+  opacity: 0.5;
+  border-radius: 50%;
+  -webkit-animation: loading 1s infinite ease-in-out;
+          animation: loading 1s infinite ease-in-out;
+}
+
+#loading span:nth-child(1) {
+  left: 0px;
+  -webkit-animation-delay: 0.0s;
+          animation-delay: 0.0s;
+}
+
+#loading span:nth-child(2) {
+  left: 20px;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+#loading span:nth-child(3) {
+  left: 40px;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+#loading span:nth-child(4) {
+  left: 60px;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+#loading span:nth-child(5) {
+  left: 80px;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}

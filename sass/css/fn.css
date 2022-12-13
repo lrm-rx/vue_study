@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.row-cols-1 > * {
+  width: 100%;
+}
+
+.row-cols-2 > * {
+  width: 50%;
+}
+
+.row-cols-3 > * {
+  width: 33.3333333333%;
+}
+
+.row-cols-4 > * {
+  width: 25%;
+}
+
+.row-cols-5 > * {
+  width: 20%;
+}
+
+.row-cols-6 > * {
+  width: 16.6666666667%;
+}
+
+/*
+  定义线性渐变
+  $direction: 方向
+  $gradients: 颜色过度的值列表
+*/
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(skyblue), to(green));
+  background-image: linear-gradient(to right, skyblue, green);
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(skyblue), to(pink));
+  background-image: linear-gradient(to right, skyblue, pink);
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(red), to(pink));
+  background-image: linear-gradient(to right, red, pink);
+}

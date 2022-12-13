@@ -1,0 +1,42 @@
+@function row-cols-width($column) {
+  @return percentage(1 / $column);
+}
+
+@for $i from 1 through 6 {
+  .row-cols-#{$i}>* {
+    width: row-cols-width($i);
+  }
+}
+
+/*
+  定义线性渐变
+  $direction: 方向
+  $gradients: 颜色过度的值列表
+*/
+
+// @function background-linear-gradient($direction, $start-color, $end-color: pink) {
+//   @return linear-gradient($direction, $start-color, $end-color);
+// }
+
+@function background-linear-gradient($direction, $color...) {
+  @return linear-gradient($direction, $color);
+}
+// 正常传参
+body {
+  background-image: background-linear-gradient(to right, skyblue, green);
+}
+
+// 省略默认值
+body {
+  background-image: background-linear-gradient(to right, skyblue);
+}
+
+// 按照key进行传参
+body {
+  background-image: background-linear-gradient($start-color: red, $direction: to right);
+}
+
+$widths: 50px, 40px, 80px;
+.top {
+  width: min($widths...);
+}

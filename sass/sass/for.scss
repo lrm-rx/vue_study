@@ -1,0 +1,58 @@
+@for $i from 1 to 4 {
+  .p#{$i} {
+    width: 10px * $i;
+    height: 30px;
+    background-color: pink;
+  }
+}
+
+@for $i from 1 through 4 {
+  .through-p#{$i} {
+    width: 10px * $i;
+    height: 30px;
+    background-color: pink;
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.3;
+    transform: translateY(0px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-20px);
+    background: pink;
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: translateY(0px);
+  }
+}
+
+#loading {
+  position: fixed;
+  top: 200px;
+  left: 46%;
+}
+
+#loading span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: skyblue;
+  opacity: 0.5;
+  border-radius: 50%;
+  animation: loading 1s infinite ease-in-out;
+}
+
+@for $i from 1 to 6 {
+  #loading span:nth-child(#{$i}) {
+    left: 20 * ($i - 1) + px;
+    // animation-delay: 20 * ($i - 1) / 100 + s;
+    // unquote去引号
+    animation-delay: unquote($string: "0." + ($i - 1) * 2 + s);
+  }
+}

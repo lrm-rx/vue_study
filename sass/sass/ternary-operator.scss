@@ -1,0 +1,5 @@
+$theme: 'light';
+
+.container {
+  color: if($theme=='light', #000, #fff);
+}

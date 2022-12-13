@@ -1,0 +1,26 @@
+p {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.p0 {
+  background-color: red;
+}
+
+.p1 {
+  background-color: green;
+}
+
+.p2 {
+  background-color: blue;
+}
+
+.p3 {
+  background-color: pink;
+}
+
+.p4 {
+  background-color: turquoise;
+}

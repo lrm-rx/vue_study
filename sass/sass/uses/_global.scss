@@ -1,0 +1,7 @@
+$font-size: 28px;
+@mixin base($color: #f00) {
+  color: $color;
+}
+.gclass {
+  background-color: pink;
+}

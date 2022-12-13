@@ -1,0 +1,13 @@
+p {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin: 10px;
+}
+$color-list: red green blue pink turquoise;
+@each $color in $color-list {
+  $index: index($color-list, $color);
+  .p#{$index - 1} {
+    background-color: $color;
+  }
+}

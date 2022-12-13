@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*
+  插值语句
+  选择器,属性名,属性值,注释
+*/
+p {
+  font: 12px/30px Helvetica;
+}
+
+a.danger {
+  border-color: #f00;
+}

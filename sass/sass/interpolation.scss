@@ -1,0 +1,16 @@
+/*
+  插值语句
+  选择器,属性名,属性值,注释
+*/
+$font-size: 12px;
+$line-height: 30px;
+
+p{
+  font: #{$font-size}/#{$line-height} Helvetica;
+}
+
+$class-name: danger;
+$attr: color;
+a.#{$class-name} {
+  border-#{$attr}: #f00;
+}

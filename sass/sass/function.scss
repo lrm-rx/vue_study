@@ -1,0 +1,71 @@
+p {
+  height: 30px;
+}
+
+.p0 {
+  background-color: #5c7a29;
+}
+
+.p1 {
+  /*
+    让颜色变亮
+    lighten($color, $amount)
+    $amount 的取值有 0% - 100%之间
+  */
+  background-color: lighten(#5c7a29, 30%);
+}
+
+.p2 {
+  // 让颜色变暗, 通常使用color.scale()代替该方案
+  background-color: darken(#5c7a29, 20%);
+}
+
+.p3 {
+  // 降低颜色透明度, 通常使用color.scale()代替该方案
+  background-color: opacify(rgba(#5c7a29, 0.1), 0.5);
+}
+
+p {
+  z-index: abs($number: -15);
+  z-index: ceil(5.8);
+  z-index: max(5, 1, 7, 10);
+  opacity: random(); // 0 - 1
+}
+.p10 {
+  z-index: length(12px); // 1
+  z-index: length(12px 6px 8px); // 3
+  z-index: index(a b c d, c); // 3
+  padding: append(10px 20px, 30px); // 10px 20px 30px
+  color: nth($list: red skyblue green, $n: 2); // skyblue
+}
+
+
+$font-sizes: ("small": 12px, "normal": 18px, "large": 24px);
+$padding: (top: 10px, right: 20px, bottom: 10px, left: 30px);
+
+.p12 {
+  font-size: map-get($font-sizes, "normal"); // 18px
+  @if map-has-key($padding, "right") {
+    padding-right: map-get($padding, "right");
+  }
+  &:after {
+    content: map-keys($font-sizes) + " " + map-values($padding) + "";
+  }
+}
+
+$color: #f00;
+@mixin padding($left: 0, $top: 0, $right: 0, $bottom: 0) {
+  padding: $top $right $bottom $left;
+}
+
+.container1 {
+  @if variable-exists($color) {
+    color: $color;
+  }
+  @else {
+    content: "$color不在存";
+  }
+  @if mixin-exists(padding) {
+    @include padding($left: 10px, $right);
+  }
+}

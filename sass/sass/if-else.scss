@@ -1,0 +1,58 @@
+$theme: "red";
+.container {
+  @if $theme == "red" {
+    color: red;
+  }
+  @else if $theme == "blue" {
+    color: skyblue;
+  }
+  @else if $theme == "green" {
+    color: green;
+  }
+  @else {
+    color: pink;
+  }
+}
+%triangle {
+  width: 0px;
+  height: 0px;
+  display: inline-block;
+}
+@mixin triangle($direction: top, $size: 30px, $border-color: black) {
+  border-width: $size;
+  border-#{$direction}-width: 0;
+  @if($direction == top) {
+    border-color: transparent transparent $border-color transparent;
+    border-style: dashed dashed solid dashed;
+  }
+  @else if($direction == right) {
+    border-color: transparent transparent transparent $border-color;
+    border-style: dashed dashed solid dashed;
+  }
+  @else if($direction == bottom) {
+    border-color: $border-color transparent transparent transparent;
+    border-style: dashed dashed solid dashed;
+  }
+  @else if($direction == left) {
+    border-color: transparent $border-color transparent transparent;
+    border-style: dashed dashed solid dashed;
+  }
+}
+
+.p0 {
+  @extend %triangle;
+  @include triangle();
+}
+
+.p1 {
+  @extend %triangle;
+  @include triangle(rigth, 20px red);
+}
+.p2 {
+  @extend %triangle;
+  @include triangle(bottom, 20px red);
+}
+.p3 {
+  @extend %triangle;
+  @include triangle(left, 20px red);
+}
