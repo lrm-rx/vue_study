@@ -78,6 +78,10 @@
 			onSelect(e) {
 				console.log(e.detail.value)
 			}
+		},
+		onLoad(e) {
+			console.log('e:',e)
+			console.log(getCurrentPages())
 		}
 	}
 </script>

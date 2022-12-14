@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/demo/demo",
+    "pages/list/list",
+    "pages/user/user",
+    "pages/detail/detail"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "iconfontSrc": "static/fonts/iconfont.ttf",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconfont": {
+          "text": "",
+          "selectedText": "",
+          "color": "#333",
+          "selectedColor": "#007AFF"
+        }
+      },
+      {
+        "text": "新闻",
+        "pagePath": "pages/list/list",
+        "iconfont": {
+          "text": "",
+          "selectedText": "",
+          "color": "#333",
+          "selectedColor": "#007AFF"
+        }
+      },
+      {
+        "text": "用户",
+        "pagePath": "pages/user/user",
+        "iconPath": "static/tabbar/user.png",
+        "selectedIconPath": "static/tabbar/user-h.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

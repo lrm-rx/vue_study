@@ -1,5 +1,9 @@
 <template>
 	<view class="out">
+		<navigator url="/pages/demo4/demo4?pw=uniapp">
+			<button>跳转demo4,获取参数</button>
+		</navigator>
+		<button @click="goDemo4">navigateTo跳转demo4</button>
 		<!-- 自定义组件 -->
 		<myitem :activeKey.sync="activeIndex" :sourceData="navArr" @change="changeTitle" />
 		<navigator url="/pages/list/list">
@@ -87,6 +91,11 @@
 		methods: {
 			changeTitle(value) {
 				console.log('value:', value);
+			},
+			goDemo4() {
+				uni.navigateTo({
+					url: "/pages/demo4/demo4"
+				})
 			}
 		}
 	}

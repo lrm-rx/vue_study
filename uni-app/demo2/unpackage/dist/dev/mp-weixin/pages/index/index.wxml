@@ -1,0 +1,1 @@
+<view class="content"><image class="logo" src="/static/logo.png" data-event-opts="{{[['tap',[['clickImg',['$event']]]]]}}" bindtap="__e"></image><view class="text-area"><text class="title">{{title}}</text></view><view><navigator url="/pages/demo/demo">跳转到demo</navigator></view><view data-event-opts="{{[['tap',[['clickBox',['$event']]]]]}}" class="box" bindtap="__e"></view></view>

@@ -1,0 +1,1 @@
+<view class="out"><block wx:for="{{listArr}}" wx:for-item="item" wx:for-index="__i0__" wx:key="id"><view data-event-opts="{{[['tap',[['clickItem',['$0'],[[['listArr','id',item.id,'id']]]]]]]}}" class="row" bindtap="__e"><view class="title">{{item.title}}</view><view class="content">{{item.body}}</view></view></block></view>
