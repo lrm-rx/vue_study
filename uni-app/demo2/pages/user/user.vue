@@ -1,6 +1,6 @@
 <template>
 	<view>
-			<view @click="clickUser">户信息</view> 
+		<view @click="clickUser">户信息</view>
 	</view>
 </template>
 
@@ -8,35 +8,35 @@
 	export default {
 		data() {
 			return {
-				
+
 			}
 		},
 		methods: {
-			clickUser(){
+			clickUser() {
 				uni.removeTabBarBadge({
-					index:2
+					index: 2
 				})
 			}
 		},
-		onLoad(){
+		onLoad() {
 			uni.setTabBarBadge({
-				index:2,
-				text:"3"
-			})		
-				
-			uni.showTabBarRedDot({
-				index:1
+				index: 2,
+				text: "3"
 			})
-			
-			let key=uni.getStorageSync("mykey")
+
+			uni.showTabBarRedDot({
+				index: 1
+			})
+
+			let key = uni.getStorageSync("mykey")
 			console.log("用户页面")
 			console.log(key)
-			
-			
+
+
 		}
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

@@ -45,9 +45,6 @@
 			uni.setStorageSync('mykey3', 'uniapp学习');
 			uni.setStorageSync('mykey2', 'vue项目');
 			uni.setStorageSync('mykey', {name:"张三",age:22});			
-			
-			
-			
 		},
 		methods: {
 			removeBtn(){
@@ -56,7 +53,7 @@
 			},
 			clickImg(){
 				uni.showToast({
-					title:"发布失败发布失败发布失败发布失败",
+					title:"发布失败",
 					icon:"none",
 					mask:true
 				})

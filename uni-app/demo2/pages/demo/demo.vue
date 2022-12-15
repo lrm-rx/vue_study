@@ -29,10 +29,6 @@
 			setTimeout(()=>{
 				uni.hideNavigationBarLoading()
 			},1500)
-			
-			
-			
-			
 		}
 	}
 </script>

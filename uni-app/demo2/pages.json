@@ -5,44 +5,36 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		}, {
+			"path": "pages/demo/demo",
+			"style": {
+				"navigationBarTitleText": "demo页面",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/list/list",
+			"style": {
+				"navigationBarTitleText": "新闻",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "详情页",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/demo/demo",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "demo页面",				
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/list/list",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "新闻列表",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/user",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "个人中心",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/detail/detail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "详情页",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -51,11 +43,11 @@
 	},
 	"uniIdRouter": {},
 	"tabBar": {
+		// 自定义图片路径
 		"iconfontSrc": "static/fonts/iconfont.ttf",
-		"list": [
-			{
+		"list": [{
 				"text": "首页",
-				"pagePath": "pages/index/index",				
+				"pagePath": "pages/index/index",
 				"iconfont": {
 					"text": "\ue74e",
 					"selectedText": "\ue74e",
@@ -66,14 +58,14 @@
 			{
 				"text": "新闻",
 				"pagePath": "pages/list/list",
-				"iconfont":{
-					"text":"\ue6f9",
+				"iconfont": {
+					"text": "\ue6f9",
 					"selectedText": "\ue6f9",
 					"color": "#333",
 					"selectedColor": "#007AFF"
 				}
-				
-			},{
+
+			}, {
 				"text": "用户",
 				"pagePath": "pages/user/user",
 				"iconPath": "static/tabbar/user.png",
