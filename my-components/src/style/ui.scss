@@ -1,0 +1,8 @@
+// 修改组件库内部的样式
+// 需要自定义一个类名空间
+.rm-select-icon-dialog-body-height {
+  .el-dialog__body {
+    height: 500px;
+    overflow-y: scroll;
+  }
+}
