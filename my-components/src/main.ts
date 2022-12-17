@@ -5,6 +5,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { toLine } from './utils/index';
+import rmUI from './components'
 
 
 const app = createApp(App)
@@ -19,4 +20,5 @@ for (const i in ElementPlusIconsVue) {
 app
   .use(router)
   .use(ElementPlus)
+  .use(rmUI)
   .mount('#app')
