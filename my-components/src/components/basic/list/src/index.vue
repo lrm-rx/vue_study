@@ -12,7 +12,8 @@
             <div class="content">
               <div v-if="itemChildren.title" class="title">
                 <div class="rm-text-overflow-1">{{ itemChildren.title }}</div>
-                <el-tag v-if="itemChildren.tag" size="small" :type="itemChildren.tagType">{{ itemChildren.tag }}</el-tag>
+                <el-tag v-if="itemChildren.tag" size="small" :type="itemChildren.tagType">{{ itemChildren.tag
+                }}</el-tag>
               </div>
               <!-- 超出2行显示... rm-text-overflow-2 -->
               <div class="desc rm-text-overflow-2" v-if="itemChildren.desc">{{ itemChildren.desc }}</div>
@@ -22,11 +23,12 @@
         </el-scrollbar>
         <!-- footer -->
         <div class="actions">
-          <div class="action-item" @click="clickAction(action, k)" :class="{ 'border': k !== actions.length }" v-for="(action, k) in actions" :key="k">
+          <div class="action-item" @click="clickAction(action, k)" :class="{ 'border': k !== actions.length }"
+            v-for="(action, k) in actions" :key="k">
             <div class="action-icon" v-if="action.icon">
-                <component :is="`el-icon-${toLine(action.icon)}`"></component>
-              </div>
-              <div class="a-text">{{ action.text }}</div>
+              <component :is="`el-icon-${toLine(action.icon)}`"></component>
+            </div>
+            <div class="a-text">{{ action.text }}</div>
           </div>
         </div>
       </el-tab-pane>
@@ -52,10 +54,10 @@ const props = defineProps({
 })
 const emits = defineEmits(['clickItem', 'clickAction'])
 const clickItem = (item: IListItem, index: number) => {
-  emits('clickItem', {item, index})
+  emits('clickItem', { item, index })
 }
 const clickAction = (item: IActionOptions, index: number) => {
-  emits('clickAction', {item, index})
+  emits('clickAction', { item, index })
 }
 </script>
 
@@ -101,6 +103,7 @@ const clickAction = (item: IActionOptions, index: number) => {
   display: flex;
   align-items: center;
   border-top: 1px solid #eee;
+
   .action-item {
     height: 50px;
     flex: 1;
@@ -108,10 +111,16 @@ const clickAction = (item: IActionOptions, index: number) => {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+
     .action-icon {
       margin-right: 4px;
       position: relative;
       top: 2px;
+
+      svg {
+        width: 1em;
+        height: 1em;
+      }
     }
   }
 }

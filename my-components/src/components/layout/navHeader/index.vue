@@ -23,5 +23,9 @@ const toggle = () => {
   padding: 0 20px;
   display: flex;
   align-items: center;
+  svg {
+    width: 1em;
+    height: 1em;
+  }
 }
 </style>

@@ -11,11 +11,6 @@ body,
   height: 100%;
 }
 
-svg {
-  width: 1em;
-  height: 1em;
-}
-
 .rm-text-overflow-2 {
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden; //溢出内容隐藏

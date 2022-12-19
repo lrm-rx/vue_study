@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside width="auto">
+    <el-aside width="auto" class="rm-el-aside">
       <nav-side :collapse="isCollapse"></nav-side>
     </el-aside>
     <el-container>
@@ -26,5 +26,9 @@ const isCollapse = ref(false)
 .el-header {
   padding: 0;
   border-bottom: 1px solid #eee;
+}
+.rm-el-aside {
+  background-color: #545c64;
+  height: 100%;
 }
 </style>

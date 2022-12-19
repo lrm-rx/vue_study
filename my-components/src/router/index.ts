@@ -7,6 +7,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/',
+        redirect: '/selectIcon',
         component: ()=>import('@/views/home.vue')
       },
       {
@@ -28,6 +29,18 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/menu',
         component: ()=>import('@/views/menu/index.vue')
+      },
+      {
+        path: '/progress',
+        component: ()=>import('@/views/progress/index.vue')
+      },
+      {
+        path: '/selecttime',
+        component: ()=>import('@/views/selectTime/index.vue')
+      },
+      {
+        path: '/selectcity',
+        component: ()=>import('@/views/selectCity/index.vue')
       }
     ]
   }
