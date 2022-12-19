@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside width="auto">
-      <nav-side v-model:collapse="isCollapse"></nav-side>
+      <nav-side :collapse="isCollapse"></nav-side>
     </el-aside>
     <el-container>
       <el-header>
@@ -15,11 +15,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import NavHeader from './navHeader/index.vue'
-import NavSide from './navSide/index.vue'
-const isCollapse = ref(false)
+import { ref } from "vue";
+import NavSide from "./navSide/index.vue";
+import NavHeader from "./navHeader/index.vue";
 
+const isCollapse = ref(false)
 </script>
 
 <style lang="scss" scoped>

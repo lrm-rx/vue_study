@@ -4,13 +4,15 @@ import SelectArea from './selectArea'
 import RmTrend from './trend'
 import RmNotification from './notification'
 import RmList from './list'
+import RmMenu from './menu'
 
 const components = [
   SelectIcom,
   SelectArea,
   RmTrend,
   RmNotification,
-  RmList
+  RmList,
+  RmMenu
 ]
 
 export default {

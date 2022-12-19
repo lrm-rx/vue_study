@@ -1,9 +1,9 @@
 import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router';
-import Container from '@/components/container/src/index.vue'
+import Loyout from '@/components/layout/index.vue'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: Container,
+    component: Loyout,
     children: [
       {
         path: '/',
@@ -24,6 +24,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/notification',
         component: ()=>import('@/views/notification/index.vue')
+      },
+      {
+        path: '/menu',
+        component: ()=>import('@/views/menu/index.vue')
       }
     ]
   }
