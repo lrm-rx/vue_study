@@ -1,5 +1,5 @@
 <template>
-  <el-popover popper-class="rm-el-popper-padding-bottom0" placement="bottom" :width="300" trigger="click">
+  <el-popover popper-class="rm-el-popper-padding0" placement="bottom" :width="300" trigger="click">
     <template #default>
       <slot></slot>
     </template>
@@ -39,5 +39,9 @@ const props = defineProps({
 <style lang="scss" scoped>
 .rm-badge-cursor {
   cursor: pointer;
+}
+svg {
+  width: 1em;
+  height: 1em;
 }
 </style>

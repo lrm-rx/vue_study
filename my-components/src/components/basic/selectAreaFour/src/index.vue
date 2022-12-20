@@ -1,6 +1,6 @@
 <template>
   <div class="rm-el-select-margin-right10">
-    <el-select clearable placeholder="请选择省份" v-model="province">
+    <el-select clearable placeholder="请选择省份" filterable  v-model="province">
       <el-option
         v-for="item in provincesList"
         :key="item.code"
@@ -11,6 +11,7 @@
     <el-select
       clearable
       placeholder="请选择城市"
+      filterable 
       v-model="city"
       :disabled="!province"
     >
@@ -21,7 +22,7 @@
         :label="item.name"
       ></el-option>
     </el-select>
-    <el-select clearable placeholder="请选择区域" v-model="area" :disabled='!province || !city'>
+    <el-select clearable placeholder="请选择区域" filterable  v-model="area" :disabled='!province || !city'>
       <el-option
       v-for="item in areasList"
       :key="item.code"
@@ -29,7 +30,7 @@
       :label='item.name'
       ></el-option>
     </el-select>
-    <el-select clearable placeholder="请选择街道" v-model="street" :disabled='!province || !city || !area'>
+    <el-select clearable placeholder="请选择街道" filterable  v-model="street" :disabled='!province || !city || !area'>
       <el-option
       v-for="item in streetsList"
       :key="item.code"
