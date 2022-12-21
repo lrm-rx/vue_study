@@ -10,11 +10,14 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
+    "@wangeditor/editor": "^5.1.23",
     "element-plus": "^2.2.26",
+    "lodash": "^4.17.21",
     "vue": "^3.2.45",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
     "@types/node": "^18.11.15",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",

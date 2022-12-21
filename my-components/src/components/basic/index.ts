@@ -10,6 +10,8 @@ import RmProgress from './progress'
 import SelectTime from './selectTime'
 import SelectDate from './selectDate'
 import SelectCity from './selectCity'
+import RmForm from './form'
+import ModelForm from './modelForm'
 
 const components = [
   SelectIcom,
@@ -22,7 +24,9 @@ const components = [
   RmProgress,
   SelectTime,
   SelectDate,
-  SelectCity
+  SelectCity,
+  RmForm,
+  ModelForm
 ]
 
 export default {
