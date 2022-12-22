@@ -20,8 +20,7 @@
       <template #footer="{ form }">
         <span class="dialog-footer">
           <el-button @click="Cancel">取 消</el-button>
-          <el-button type="primary" @click="Confirm(form)">确 认</el-button
-          >
+          <el-button type="primary" @click="Confirm(form)">确 认</el-button>
         </span>
       </template>
     </model-form>

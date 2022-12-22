@@ -12,6 +12,7 @@ import SelectDate from './selectDate'
 import SelectCity from './selectCity'
 import RmForm from './form'
 import ModelForm from './modelForm'
+import ProTable from './table'
 
 const components = [
   SelectIcom,
@@ -26,7 +27,8 @@ const components = [
   SelectDate,
   SelectCity,
   RmForm,
-  ModelForm
+  ModelForm,
+  ProTable
 ]
 
 export default {
