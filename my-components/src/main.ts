@@ -5,7 +5,8 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { toLine } from './utils/index';
-import rmUI from './components/basic'
+import rmUI from './components/basic';
+import './mock';
 
 
 const app = createApp(App)

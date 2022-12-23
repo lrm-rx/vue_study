@@ -1,7 +1,8 @@
 <template>
   <div>
-    <pro-table :data="sourceTabeData" :options="options" elementLoadingText="正在努力加载中..." @confirm="check" @cancel="close"
-      editIcon="Edit">
+    <pro-table isEditRow v-model:editRowIndex="editRowIndex" :data="sourceTabeData" :options="options"
+      elementLoadingText="正在努力加载中..." @confirm="check" @cancel="close" editIcon="Edit" pagination v-model:currentPage="current" v-model:pageSize="pageSize" :total="total"
+      paginationAlign="center" @sizeChange="handleSizeChange" @currentChange="handleCurrentChange">
       <template #date="{ scope }">
         <el-icon-timer></el-icon-timer>
         {{ scope.row.date }}
@@ -27,12 +28,17 @@
         <el-button size="small" type="primary" @click="edit(scope)">编辑</el-button>
         <el-button size="small" type="danger">删除</el-button>
       </template>
+      <template #editRow="{ scope }">
+        <el-button size="small" type="primary">确认</el-button>
+        <el-button size="small" type="danger">取消</el-button>
+      </template>
     </pro-table>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import axios from 'axios'
 import { TableOptions } from '@/components/basic/table/src/types';
 interface ISourceTabeData {
   date: string,
@@ -40,13 +46,43 @@ interface ISourceTabeData {
   address: string
 }
 const sourceTabeData = ref<ISourceTabeData[]>([])
+const editRowIndex = ref<string>('')
+const current = ref<number>(1)
+const pageSize = ref<number>(10)
+const total = ref<number>(0)
 // setTimeout(() => {
 //   sourceTabeData.value = tableData
 // }, 2000);
+
+const getTableList = () => {
+  axios.post('/api/list', {
+    current: current.value,
+    pageSize: pageSize.value
+  }).then((res: any) => {
+    if (res.data.code !== '200') return
+    sourceTabeData.value = res.data.data.rows
+    total.value = res.data.data.total
+    // console.log('返回的数据', res);
+  }).catch((error) => {
+    console.error(error);
+  })
+}
+// 分布的页大小改变
+const handleSizeChange = (value: number) => {
+  pageSize.value = value
+  current.value = 1
+  getTableList()
+}
+// 分布的页数改变
+const handleCurrentChange = (value: number) => {
+  current.value = value
+  getTableList()
+}
 onMounted(() => {
-  sourceTabeData.value = tableData
+  getTableList()
 })
 const edit = (scope: any) => {
+  editRowIndex.value = 'edit'
   console.log('行:', scope);
 }
 const confirm = (scope: any) => {
@@ -86,6 +122,7 @@ const options: TableOptions[] = [
   },
   {
     lable: '操作',
+    prop: 'action',
     align: 'center',
     action: true
   }
