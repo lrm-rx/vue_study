@@ -1,0 +1,11 @@
+{
+  "extends": "eslint-config-egg",
+  "root": true,
+  "rules": {
+    "arrow-parens": "off",
+    "quotes": "off",
+    "array-bracket-spacing": "off",
+    "no-alert": "off",
+    "no-undef": "off"
+  }
+}
