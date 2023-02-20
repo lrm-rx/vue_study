@@ -1,11 +1,13 @@
-'use strict';
+"use strict";
 
-const { Controller } = require('egg');
+const { Controller } = require("egg");
 
 class HomeController extends Controller {
   async index() {
-    const { ctx } = this;
-    ctx.body = 'hi, egg';
+    const { ctx, app } = this;
+    const res = await app.mysql.select("article");
+    console.log("数据:", res);
+    ctx.body = res;
   }
 }
 
