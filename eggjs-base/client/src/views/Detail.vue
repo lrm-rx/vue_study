@@ -8,18 +8,30 @@
 </template>
 
 <script>
+import moment from "moment";
 export default {
   props: {},
   data() {
     return {
-      detail: {
-        id: 2,
-        title: "Flutter从入门到进阶 实战携程网App",
-        img: "https://img-blog.csdnimg.cn/img_convert/515728166f8ca2fb0c20806158161f28.png",
-        summary: "从入门到进阶带你快速解锁 FLutter 新版热门技术",
-        content: "从入门到进阶带你快速解锁 Flutter 新版热门技术，体系化讲解+真实项目高仿，系统掌 Flutter 实战技术与技巧。无论是新人还是老手。都能让你的 Flutter 技术能力和项目经验得到前所未有的提升!",
-        createTime: "2019-10-10 10:20:20"
-      }
+      detail: {}
+    }
+  },
+  created() {
+    this.getArticleDetail();
+  },
+  methods: {
+    getArticleDetail() {
+      // query传参 this.$route.query
+      fetch(`/article/detail/${this.$route.params.id}`)
+        .then(res => res.json())
+        .then(res => {
+          if (res.status === 200) {
+            this.detail = res.data;
+            this.detail.createTime = res.data.createTime ? moment(res.data.createTime).format("YYYY-MM-DD HH:mm:ss") : undefined;
+          } else {
+            this.$toast.fail(res.errorMsg)
+          }
+        })
     }
   }
 }

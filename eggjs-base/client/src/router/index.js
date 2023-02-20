@@ -15,7 +15,7 @@ const router = new VueRouter({
       component: () => import("../views/Add.vue"),
     },
     {
-      path: "/detail",
+      path: "/detail/:id",
       component: () => import("../views/Detail.vue"),
     },
   ],

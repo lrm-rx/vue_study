@@ -32,6 +32,8 @@ module.exports = {
     "vue/multi-word-component-names": "off",
     "accessor-pairs": 2,
     "vue/html-self-closing": 0,
+    "vue/first-attribute-linebreak": 0,
+    "vue/html-indent": 0,
     "arrow-spacing": [
       2,
       {

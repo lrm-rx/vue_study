@@ -43,7 +43,22 @@ export default {
         content: this.content,
         img: this.img
       }
-      console.log("data:", data);
+      fetch("/article/create", {
+        method: "post",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(res => res.json())
+        .then(res => {
+          if (res.status === 200) {
+            this.$toast.success("文章发布成功!");
+            this.$router.push("/");
+          } else {
+            this.$toast.fail(res.errorMsg)
+          }
+        })
     }
   }
 }
