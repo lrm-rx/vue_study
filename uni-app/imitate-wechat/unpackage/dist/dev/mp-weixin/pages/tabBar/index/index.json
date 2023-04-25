@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "lucky-nav-bar": "/components/lucky-nav-bar"
+  }
+}

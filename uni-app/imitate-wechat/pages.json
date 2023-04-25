@@ -1,0 +1,63 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabBar/index/index",
+			"style": {}
+		}
+		,{
+			"path" : "pages/tabBar/mail/mail",
+			"style" : {}
+		}
+		,{
+			"path" : "pages/tabBar/find/find",
+			"style" : {}
+		}
+		,{
+			"path" : "pages/tabBar/mine/mine",
+			"style" : {}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "仿微信",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"app-plus":{
+			"titleNView":false,
+			"scrollIndicator":"none"
+		}
+	},
+	"tabBar":{
+		"color":"#000000",
+		"selectedColor":"#08C261",
+		"borderStyle":"black",
+		"backgroundColor":"#F7F7F7",
+		"list":[
+			{
+				"iconPath":"static/tabBar/index.png",
+				"selectedIconPath":"static/tabBar/index-select.png",
+				"pagePath":"pages/tabBar/index/index",
+				"text":"首页"
+			},
+			{
+				"iconPath":"static/tabBar/mail.png",
+				"selectedIconPath":"static/tabBar/mail-select.png",
+				"pagePath":"pages/tabBar/mail/mail",
+				"text":"通讯录"
+			},
+			{
+				"iconPath":"static/tabBar/find.png",
+				"selectedIconPath":"static/tabBar/find-select.png",
+				"pagePath":"pages/tabBar/find/find",
+				"text":"发现"
+			},
+			{
+				"iconPath":"static/tabBar/my.png",
+				"selectedIconPath":"static/tabBar/my-select.png",
+				"pagePath":"pages/tabBar/mine/mine",
+				"text":"我的"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}

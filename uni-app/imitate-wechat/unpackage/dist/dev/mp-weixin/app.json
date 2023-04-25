@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/tabBar/index/index",
+    "pages/tabBar/mail/mail",
+    "pages/tabBar/find/find",
+    "pages/tabBar/mine/mine"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "仿微信",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#08C261",
+    "borderStyle": "black",
+    "backgroundColor": "#F7F7F7",
+    "list": [
+      {
+        "iconPath": "static/tabBar/index.png",
+        "selectedIconPath": "static/tabBar/index-select.png",
+        "pagePath": "pages/tabBar/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "static/tabBar/mail.png",
+        "selectedIconPath": "static/tabBar/mail-select.png",
+        "pagePath": "pages/tabBar/mail/mail",
+        "text": "通讯录"
+      },
+      {
+        "iconPath": "static/tabBar/find.png",
+        "selectedIconPath": "static/tabBar/find-select.png",
+        "pagePath": "pages/tabBar/find/find",
+        "text": "发现"
+      },
+      {
+        "iconPath": "static/tabBar/my.png",
+        "selectedIconPath": "static/tabBar/my-select.png",
+        "pagePath": "pages/tabBar/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

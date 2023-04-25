@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "lucky-icon-button": "/components/lucky-icon-button"
+  }
+}
