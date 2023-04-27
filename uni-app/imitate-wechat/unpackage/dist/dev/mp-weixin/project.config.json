@@ -18,7 +18,7 @@
         }
     },
     "compileType": "miniprogram",
-    "libVersion": "2.31.1",
+    "libVersion": "2.31.0",
     "appid": "touristappid",
     "projectname": "imitate-wechat",
     "condition": {},
