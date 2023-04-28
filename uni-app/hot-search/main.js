@@ -1,25 +1,25 @@
-
 // #ifndef VUE3
-import Vue from 'vue'
-import App from './App'
+import Vue from "vue";
+import App from "./App";
+import "./styles/global.scss";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-App.mpType = 'app'
+App.mpType = "app";
 
 const app = new Vue({
-    ...App
-})
-app.$mount()
+  ...App,
+});
+app.$mount();
 // #endif
 
 // #ifdef VUE3
-import { createSSRApp } from 'vue'
-import App from './App.vue'
+import { createSSRApp } from "vue";
+import App from "./App.vue";
 export function createApp() {
-  const app = createSSRApp(App)
+  const app = createSSRApp(App);
   return {
-    app
-  }
+    app,
+  };
 }
 // #endif
