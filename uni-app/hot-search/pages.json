@@ -55,5 +55,19 @@
         "selectedIconPath": "static/tab-icons/my-active.png"
       }
     ]
-  }
+  },
+  "subPackages": [
+    {
+      "root": "subpkg",
+      "name": "sub-1",
+      "pages": [
+        {
+          "path": "pages/hot-search/hot-search",
+          "style": {
+            "navigationBarTitleText": "文章搜索"
+          }
+        }
+      ]
+    }
+  ]
 }

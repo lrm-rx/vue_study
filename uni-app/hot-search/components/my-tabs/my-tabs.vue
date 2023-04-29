@@ -99,7 +99,7 @@ export default {
 		defaultIndex: {
 			handler(val) {
 				this.activeIndex = val;
-				// 定义滑块的位置
+				// 重新计算滑块的位置
 				this.tabToIndex();
 			},
 			// 该回调将会在侦听开始之后被立即调用
