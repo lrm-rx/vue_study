@@ -1,6 +1,6 @@
 <template>
   <view class="hot-search-container">
-    <view class="search-har-box">
+    <view class="search-bar-box">
       <my-search
         :isShowInput="true"
         :placeholderText="defaultText"
@@ -18,17 +18,18 @@
     </view>
     <!-- 搜索历史 -->
     <view class="search-history-box" v-else-if="showType === SEARCH_HISTORY">
-      <search-history :searchData="searchData"></search-history>
+      <search-history @onItemClick="onSearchConfirm"></search-history>
     </view>
     <!-- 搜索结果 -->
     <view class="search-result-list-box" v-else>
-      <search-result-list></search-result-list>
+      <search-result-list :queryStr="searchVal"></search-result-list>
     </view>
   </view>
 </template>
 
 <script>
 import { getDefaultText } from "api/search";
+import { mapMutations } from "vuex";
 // 0: 热搜列表 - 默认
 const HOT_LIST = "0";
 // 1：搜索历史
@@ -57,6 +58,7 @@ export default {
     this.loadDefaultText();
   },
   methods: {
+    ...mapMutations("search", ["addSearchData"]),
     // 获取推荐搜索文本
     async loadDefaultText() {
       const { data: res } = await getDefaultText();
@@ -66,23 +68,12 @@ export default {
     onSearchConfirm(val) {
       // 用户未输入文本，直接搜索时，使用【推荐搜索文本】
       this.searchVal = val ? val : this.defaultText;
-      this.saveSearchData();
+      // 保存搜索历史数据
+      this.addSearchData(this.searchVal);
       // 切换视图
       if (this.searchVal) {
         this.showType = SEARCH_RESULT;
       }
-    },
-    // 保存搜索历史数据
-    saveSearchData() {
-      // 1. 如果数据已存在，则删除
-      const index = this.searchData.findIndex(
-        (item) => item === this.searchVal
-      );
-      if (index !== -1) {
-        this.searchData.splice(index, 1);
-      }
-      // 2. 新的搜索内容需要先于旧的搜索内容展示
-      this.searchData.unshift(this.searchVal);
     },
     // searchbar 获取焦点
     onSearchFocus(val) {
@@ -105,12 +96,18 @@ export default {
 
 <style lang="scss" scoped>
 .hot-search-container {
-  .search-har-box {
+  .search-bar-box {
     background-color: $uni-bg-color;
     padding: $uni-spacing-row-sm;
+    position: -webkit-sticky;
     position: sticky;
-    top: 0px;
     z-index: 9;
+    /* #ifndef H5 */
+    top: 0;
+    /* #endif */
+    /* #ifdef H5 */
+    top: 44px;
+    /* #endif */
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <!-- 标题 -->
     <view class="search-hot-title">热门搜索</view>
     <!-- 列表 -->
-    <block v-for="(item, index) in hotList" :key="item.id">
+    <block v-for="(item, index) in hotList" :key="index">
       <view class="search-hot-item" @click="onItemClick(item)">
         <!-- 序号 -->
         <hot-ranking :ranking="index + 1"></hot-ranking>

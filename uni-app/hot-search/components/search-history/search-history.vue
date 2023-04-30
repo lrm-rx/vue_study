@@ -3,12 +3,14 @@
     <!-- title -->
     <view class="search-history-title-box">
       <view class="search-history-title">搜索历史</view>
-      <view v-if="!isShowClear">
-        <uni-icons type="trash" @click="isShowClear = true" />
-      </view>
-      <view v-else>
-        <text class="txt" @click="onClearAll">全部删除</text>
-        <text class="txt" @click="isShowClear = false">完成</text>
+      <view v-if="searchData.length">
+        <view v-if="!isShowClear">
+          <uni-icons type="trash" @click="isShowClear = true" />
+        </view>
+        <view v-else>
+          <text class="txt" @click="onClearAll">全部删除</text>
+          <text class="txt" @click="isShowClear = false">完成</text>
+        </view>
       </view>
     </view>
     <!-- 内容 -->
@@ -27,15 +29,9 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   name: "search-history",
-  props: {
-    searchData: {
-      type: Array,
-      required: true,
-    },
-  },
   data() {
     return {
       isShowClear: false,
@@ -46,6 +42,7 @@ export default {
     ...mapState("search", ["searchData"]),
   },
   methods: {
+    ...mapMutations("search", ["removeSearchData", "removeAllSearchData"]),
     onClearAll() {
       uni.showModal({
         title: "提示",
@@ -62,7 +59,12 @@ export default {
       });
     },
     onHistoryItemClick(item, index) {
-      this.$emit("onItemClick", item);
+      if (this.isShowClear) {
+        // 删除指定的 searchData
+        this.removeSearchData(index);
+      } else {
+        this.$emit("onItemClick", item);
+      }
     },
   },
 };
