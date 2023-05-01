@@ -66,6 +66,27 @@
           "style": {
             "navigationBarTitleText": "文章搜索"
           }
+        },
+        {
+          "path": "pages/blog-detail/blog-detail",
+          "style": {
+            "navigationBarTitleText": "文章详情",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/login-page/login-page",
+          "style": {
+            "navigationBarTitleText": "登录",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/video-detail/video-detail",
+          "style": {
+            "navigationBarTitleText": "视频详情",
+            "enablePullDownRefresh": false
+          }
         }
       ]
     }

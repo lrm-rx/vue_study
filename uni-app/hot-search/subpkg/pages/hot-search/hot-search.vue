@@ -28,6 +28,8 @@
 </template>
 
 <script>
+// 当mescroll-body写在子组件时,父页面需引入mescroll-comp.js的mixins
+import MescrollCompMixin from "@/uni_modules/mescroll-uni/components/mescroll-uni/mixins/mescroll-comp.js";
 import { getDefaultText } from "api/search";
 import { mapMutations } from "vuex";
 // 0: 热搜列表 - 默认
@@ -37,6 +39,7 @@ const SEARCH_HISTORY = "1";
 // 2：搜索结果
 const SEARCH_RESULT = "2";
 export default {
+  mixins: [MescrollCompMixin], // 使用mixin
   data() {
     return {
       HOT_LIST,

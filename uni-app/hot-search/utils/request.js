@@ -1,3 +1,4 @@
+import store from "../store";
 // 封装请求对象
 const BASE_URL =
   "https://www.fastmock.site/mock/ca5fba50b19c08e92d9343a13de2b1be/api";
@@ -7,9 +8,9 @@ function request({ url, data, method }) {
       url: BASE_URL + url,
       data,
       method,
-      // header: {
-      //   Authorization: store.state.user.token,
-      // },
+      header: {
+        Authorization: store.state.user.token,
+      },
       success: ({ data }) => {
         if (data.success) {
           resolve(data);

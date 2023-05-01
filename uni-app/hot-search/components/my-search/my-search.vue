@@ -36,7 +36,7 @@
       v-else
     >
       <!-- 搜索图标 -->
-      <image class="icon" src="@/static/images/search.png" />
+      <image class="icon" :src="config.icon" />
       <!-- placeholder -->
       <text class="placeholder">{{ placeholderText }}</text>
     </view>

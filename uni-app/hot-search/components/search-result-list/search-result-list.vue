@@ -85,7 +85,6 @@ export default {
     },
     // 上拉加载的回调
     async upCallback() {
-      console.log("object");
       if (this.isInit) return;
       this.page += 1;
       await this.loadSearchResult();

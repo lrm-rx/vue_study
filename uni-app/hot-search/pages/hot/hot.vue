@@ -39,6 +39,7 @@
               :key="index"
               :data="item"
               :ranking="index + 1"
+              @click="onItemClick(item)"
             ></hot-list-item>
           </block>
         </view>
@@ -153,6 +154,13 @@ export default {
             resolve(sum);
           })
           .exec();
+      });
+    },
+    // 热搜列表item点击事件
+    onItemClick(item) {
+      console.log("item:", item.user_name);
+      uni.navigateTo({
+        url: `/subpkg/pages/blog-detail/blog-detail?author=${item.user_name}&articleId=${item.id}`,
       });
     },
   },

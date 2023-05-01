@@ -2,6 +2,8 @@ import Vue from "vue";
 import App from "./App";
 import store from "./store";
 import "./styles/global.scss";
+// 文章详情样式
+import "./styles/article-detail.scss";
 
 // 导入过滤器
 import * as filters from "./filters";
