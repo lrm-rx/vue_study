@@ -1,0 +1,38 @@
+/* 连线中的label 样式*/
+.jtk-overlay.flowLabel:not(.aLabel) {
+  padding: 4px 10px;
+  background-color: #21365C;
+  color: #00CFF6 !important;
+  border: 1px solid #00D7FF;
+  border-radius: 5px;
+  z-index: 1;
+  max-width: 200px;
+}
+
+/* label 为空的样式 */
+.emptyFlowLabel {
+}
+
+
+.flow-endpoint-dot {
+  background-color: #1879FF;
+  border-radius: 10px;
+  z-index: 2;
+  border: 1px #eee solid;
+  cursor: crosshair;
+}
+
+.flow-endpoint-dot-hover {
+  background-color: #1524ff;
+}
+
+.ef-rectangle {
+  background-color: #1879FF;
+}
+
+.ef-rectangle-hover {
+  background-color: red;
+}
+.ef-drop-hover{
+  border: 1px dashed #1879FF;
+}
