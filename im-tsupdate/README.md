@@ -24,3 +24,21 @@ tsc --init
 ## 2-3 重要问题
 ## 2-4 类型注解和类型断言
 ## 2-5 编译和编译优化
+> tsc --noEmitOnError  不编译有错误的文件
+> ts-node xxx.ts       编译运行一体化
+
+## 2-7 常用的24种 TS 类型
+- **基本类型:**
+  > number, string, boolean, symbol, null, undefined
+- **根类型:**
+  > Object, {}
+- **对象类型:**
+  > Array, object, function
+- **枚举:**
+  > enum
+- **其他特殊类型:**
+  > any, unknown, never, void, 元组(tuple), 可变元组
+- **合成类型:**
+  > 联合类型，交叉类型
+- **字面量数据类型:**
+  
