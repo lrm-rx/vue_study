@@ -1,0 +1,15 @@
+{
+  "name": "im-ts",
+  "version": "1.0.0",
+  "description": "> 融合了后端面向对象思想的超级版的javaScript语言。\r ### 环境搭建\r ``` typescript\r npm init -y",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

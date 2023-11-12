@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div>
+    <el-button size="mini" type="danger" @click="$router.push({ path: '/stairnav' })" >楼梯导航demo</el-button >
+    <div v-if="$route.path !== '/stairnav'">
       <span class="title">Vuex - 购物车示例</span>
       <pop-cart class="pop-cart" />
     </div>
