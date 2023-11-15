@@ -59,3 +59,45 @@ tsc --init
 3. **如何定义接口**
 4. **继承接口**
 **新的接口只是在原来接口继承之上增加了一些属性或方法, 这时就用接口继承**
+
+## interface 和 type区别
+### type 和 接口类似, 都用来定义类型, 但 type 和 interface 区别如下:
+- 区别1: 定义类型范围不同
+  - interface 只能定义对象类型或接口当名字的函数类型.
+  - type 可以定义任何类型, 包括基础类型,联合类型,交叉类型, 元组.
+  ```typescript
+  // type 定义基础类型
+  type num = number
+
+  // type 定义联合类型1
+  type baseType = string | number | symbol
+
+  // type 定义联合类型2
+  interface Car {brandNo: string}
+  interface Plane {No: string; brandNo: string}
+  type TypeTools = Car | plane
+
+  // 元组
+  interface Car {brandNo: string}
+  interface Plane {No: string; brandNo: string}
+  type typeTools = [Car, Plane]
+  ```
+- 区别2: 接口可以 extends 一个或者多个接口或类, 也可以继承 type, 但 type 类型没有继承功能, 但一般接口继承 类 和 type 的应用场景很少见.
+- 区别3: 用 type 交叉类型 & 可让类型中成员合并成一个新的 type 类型, 但接口不能交叉合并.
+- 区别4: 接口可合并声明
+  > 定义两个相同名称的接口会合并声明,定义两个同名的 type 会出现编译错误.
+  ``` typescript
+  interface Error{
+    name: string;
+  }
+
+  interface Error {
+    message: string;
+    stack?: string;
+  }
+  // 接口合并
+  let error: Error = {
+    message: "空指针",
+    name: "NullPointException"
+  }
+  ```
