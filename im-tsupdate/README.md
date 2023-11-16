@@ -101,3 +101,23 @@ tsc --init
     name: "NullPointException"
   }
   ```
+
+  ## 元组
+  ### 满足以下3点的数组就是元组
+  - 在定义时每个元素的类型都确定
+  - 元素值的数据类型必须是当前元素定义的类型
+  - 元素值的个数必须和定义时个数相同
+
+## 类, 静态属性, 何时用静态属性
+1. **定义: 类就是拥有相同属性和方法的一系列对象的集合.**
+2. **展开理解: 类是一个模具, 是从这该类包含的所有具体对象中抽象出来的一个概念, 类定义了它所包含的全体对象的静态特征和动态特征.**
+3. **举例:**
+   - **people类**
+  静态循环[属性] name, age, address, phone
+  动态特征[方法] doEat, doSport
+   - **desk类**
+  静态循环[属性] height, width, color, price, brandNo, material
+  动态特征[方法] load
+   - **order类**
+  静态特征[属性] orderId, orderTime, customName
+  动态特征[方法] createOrder, modifyOrder, delOrder, chargeBack
