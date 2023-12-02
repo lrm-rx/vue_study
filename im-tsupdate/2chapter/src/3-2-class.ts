@@ -16,5 +16,5 @@ class People {
 class People1 {
   constructor(public name: string, public age: number, public addr: string) { }
 }
-
+// 静态成员(静态属性 + 方法)
 export { }
