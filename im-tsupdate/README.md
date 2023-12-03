@@ -121,3 +121,12 @@ tsc --init
    - **order类**
   静态特征[属性] orderId, orderTime, customName
   动态特征[方法] createOrder, modifyOrder, delOrder, chargeBack
+
+## 方法拦截器理解和总结
+- 生成新的数据属性 xxx
+- 保存 xxx.value , 以保留原来的方法
+- 然后修改 xxx.value 的指向, 指向新的空间,创建了一个内存地址赋值给了value
+- 然后通过 Object.defineProperty 把修改了 value 指向的 xxx 绑定到原来的方法上
+- 执行原来方法,就会找到 xxx.value 的指向的方法来执行
+
+
