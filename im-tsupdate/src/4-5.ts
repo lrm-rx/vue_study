@@ -35,6 +35,10 @@ class MobilePay extends Pay {
   change: number // 支付平台零钱
   opendid: string // 用户识别身份id
   appid: string // 小程序 appid
+  pay() {
+    super.pay();
+    console.log("完成支付!");
+  }
 }
 
 let webChatPay = new MobilePay("123", 300, 200, "12fsdafgw", PayType.WebChat, 10, "123fsdafggwefgw", "932fagwe")
