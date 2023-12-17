@@ -7,8 +7,8 @@ const cityArr = ["南宁", "广州", "东莞", "佛山", "太原", "石家庄", 
 export function strSelfSort(str: string) {
   return quickSort(str.split("")).join("");
 }
-
-export function sort<T>(data: T): Array<any> | string | undefined {
+export function sort<T>(data: T)
+export function sort<T>(data: T) {
   if (data instanceof Array) {
     if (isChinese(data)) {
       return sortChinese(data)
