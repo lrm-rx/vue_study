@@ -1,3 +1,4 @@
+// TS 泛型
 interface Ref<T> {
   value: T
 }
