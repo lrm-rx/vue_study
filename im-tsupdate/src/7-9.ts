@@ -26,10 +26,10 @@ function cross<T extends object, U extends object, Z extends object>(obj1: T, ob
   return combine
 }
 
-function union(combine: any, curobj: any) {
-  for (const k in curobj) {
-    if (Object.prototype.hasOwnProperty.call(curobj, k)) {
-      combine[k] = curobj[k]
+function union(combine: any, curObj: any) {
+  for (const k in curObj) {
+    if (Object.prototype.hasOwnProperty.call(curObj, k)) {
+      combine[k] = curObj[k]
     }
   }
   return combine
