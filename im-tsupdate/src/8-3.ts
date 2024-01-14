@@ -5,7 +5,6 @@ type Test = string | number | boolean extends string | number ? string : never
 type CondType<T> = T extends string | number ? T : never
 type TestCondType = CondType<string | number | boolean>
 
-
 type CrossType<T> = T extends object ? T : never
 type T1 = {
   a: string;
