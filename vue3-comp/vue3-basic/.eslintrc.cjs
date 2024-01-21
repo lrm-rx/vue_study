@@ -24,5 +24,8 @@ module.exports = {
     },
     "rules": {
         "semi": 0,
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "vue/no-unused-vars": "off",
     },
 }
