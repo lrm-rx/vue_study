@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
     "overrides": [
         {
@@ -16,16 +17,12 @@ module.exports = {
             }
         }
     ],
-    "parser": "@typescript-eslint/parser",
+    "extends": ["plugin:vue/vue3-essential", "@vue/eslint-config-typescript"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": [
-        "@typescript-eslint"
-    ],
     "rules": {
         "semi": 0,
     },
-    "extends": "eslint:recommended"
 }
