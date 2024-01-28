@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, PropType, ref } from 'vue'
+import { computed, ref } from 'vue'
 import HelloWorld from './HelloWorld.vue'
 import type { IPerson, IEvents } from './types'
 // interface IPerson {
