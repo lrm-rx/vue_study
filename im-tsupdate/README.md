@@ -1,4 +1,4 @@
-# 2023TypeScript学习
+# TypeScript学习
 ## 2-2 TS 定义，环境搭建，6大优势
 ### 定义
 > 融合了后端面向对象思想的超级版的javaScript语言。
