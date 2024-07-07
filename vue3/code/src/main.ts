@@ -22,6 +22,6 @@ app.directive('beauty',(element,{value})=>{
 // 挂载应用
 app.mount('#app')
 
-setTimeout(() => {
-  app.unmount()
-}, 2000);
+// setTimeout(() => {
+//   app.unmount()
+// }, 2000);

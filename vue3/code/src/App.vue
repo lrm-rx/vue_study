@@ -16,13 +16,26 @@
         </el-table-column>
       </el-table-column>
     </el-table>
+    <hr />
+    <ul>
+      <li :ref="addRef" v-for="item in list" :key="item">{{ item }}</li>
+    </ul>
   </div>
 </template>
 
 <script setup lang="ts" name="App">
-import {ref} from "vue"
+import {onBeforeUnmount, ref} from "vue"
 import Child from "./Child.vue";
-
+const refList = ref([])
+const list = ref([
+  1,
+  2,
+  3,
+])
+const addRef = (el:any) => {
+  console.log("el:", el)
+  refList.value.push(el)
+}
 const tableData = ref([
   {
     date: "2016-05-03",
@@ -81,6 +94,9 @@ const tableData = ref([
     zip: "CA 90036",
   },
 ]);
+onBeforeUnmount(() => {
+  refList.value = []
+})
 </script>
 
 <style>
