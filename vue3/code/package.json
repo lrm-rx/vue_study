@@ -15,12 +15,14 @@
     "mitt": "^3.0.1",
     "mockjs": "^1.1.0",
     "nanoid": "^5.0.3",
+    "pdfjs-dist": "^4.8.69",
     "pinia": "^2.1.7",
     "sass": "^1.77.8",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.1",
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^18.17.17",
     "@vitejs/plugin-vue": "^4.3.4",
