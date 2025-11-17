@@ -5,7 +5,7 @@
     border
     placeholder="test placeholder"
     :height="800"
-    :width="20"
+    :width="150"
     :readonly="true"
   />
 </template>
@@ -43,7 +43,8 @@ for (; i < 9; i++) {
         // readOnly: true,
         autofocus: false,
         highlightActiveLine: false,
-        editable: false
+        editable: false,
+        lineWrapping: true,  //自动换行
       },
     };
   },
