@@ -1,53 +1,51 @@
 <template>
-  <div>
-    <TagList
-      title="标题1"
-      :tags="[
-        '标签1',
-        '标签2',
-        '标签3',
-        '标签4',
-        '标签5',
-        '标签1',
-        '标签2',
-        '标签3',
-        '标签4',
-        '标签5',
-        '标签1',
-        '标签2',
-        '标签3',
-        '标签4',
-        '标签5',
-        '标签1',
-        '标签2',
-        '标签3',
-        '标签4',
-        '标签5234',
-        '标签1',
-        '标签2',
-        '标签3',
-        '标签4',
-        '标签5',
-        '标签1',
-        '标签2',
-        '标签3',
-        '标签4',
-        '标签5',
-        '标签1',
-        '标签2',
-        '标签3',
-        '标签4',
-        '标签5',
-        '标签1',
-        '标签2',
-        '标签3',
-        '标签4',
-        '标签5234',
-      ]"
-    />
-  </div>
+  <Codemirror
+    v-model:value="code"
+    :options="cmOptions"
+    border
+    placeholder="test placeholder"
+    :height="800"
+    :width="20"
+    :readonly="true"
+  />
 </template>
 
-<script setup>
-import TagList from "./TagList.vue";
+<script>
+import Codemirror from "codemirror-editor-vue3";
+
+// placeholder
+import "codemirror/addon/display/placeholder.js";
+
+// language
+import "codemirror/mode/javascript/javascript.js";
+// placeholder
+import "codemirror/addon/display/placeholder.js";
+// theme
+import "codemirror/theme/dracula.css";
+
+import { ref } from "vue";
+export default {
+  components: { Codemirror },
+  setup() {
+    const code = ref(`
+var i = 0;
+for (; i < 9; i++) {
+  console.log(i);
+  // more statements
+}`);
+
+    return {
+      code,
+      cmOptions: {
+        mode: "text/javascript", // Language mode
+        theme: "default", // Theme dracula
+        lineNumbers: true,
+        // readOnly: true,
+        autofocus: false,
+        highlightActiveLine: false,
+        editable: false
+      },
+    };
+  },
+};
 </script>

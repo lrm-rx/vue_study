@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "axios": "^1.6.1",
+    "codemirror": ">=5.64.0 <6",
+    "codemirror-editor-vue3": "^2.8.0",
     "element-plus": "^2.7.6",
     "mitt": "^3.0.1",
     "mockjs": "^1.1.0",
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.1",
     "@tsconfig/node18": "^18.2.2",
+    "@types/codemirror": "^5.60.17",
     "@types/node": "^18.17.17",
     "@vitejs/plugin-vue": "^4.3.4",
     "@vue/tsconfig": "^0.4.0",
