@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { encrypt, decrypt } from "./utils/cryptoUtils";
-const testCases = `<html><body>HTML内容<br/><img src="https://wx3.sinaimg.cn/mw690/d0f8f22agy1hxly5u9tl2j20u0140djg.jpg" /></body></html>`;
+const testCases = `<html><body>HTML内容<br/><img src="https://miaobi-lite.bj.bcebos.com/miaobi/5mao/b%27LV8xNzM0MjgxMDgzLjkyNzQ2MDc%3D%27/0.png" /></body></html>`;
 const testCasesEncrypted = encrypt(testCases, "mySecretKey");
 console.log("加密后的内容:", testCasesEncrypted);
 const decryptedContent = decrypt(testCasesEncrypted, "mySecretKey");
